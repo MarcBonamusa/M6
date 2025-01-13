@@ -1,4 +1,4 @@
-for (i = 1; i < 21; i++) {
+for (i = 1; i < 31; i++) {
     let num = document.createTextNode(i)
     let cuadrado = document.createElement('p')
     cuadrado.appendChild(num)
@@ -10,7 +10,8 @@ for (i = 1; i < 21; i++) {
     cuadrado.style.width = '50px'
     cuadrado.style.fontSize = '45px'
     cuadrado.style.textAlign = 'center'
-    cuadrado.style.margin = '3px'
+    cuadrado.style.margin = '5px'
+    cuadrado.style.borderRadius = '5px'
 
     teclado.style.display = 'grid'
     teclado.style.gridTemplateColumns = 'auto auto auto'
@@ -20,7 +21,7 @@ for (i = 1; i < 21; i++) {
     teclado.appendChild(cuadrado)
     
     if (i % 3 == 0) {
-        cuadrado.style.backgroundColor = 'yellow';
+        cuadrado.style.backgroundColor = '#FED801';
     }
 
     if (i % 2 == 0) {
