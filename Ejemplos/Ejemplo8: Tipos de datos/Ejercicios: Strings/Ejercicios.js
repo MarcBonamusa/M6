@@ -1,5 +1,5 @@
 let str = prompt("Introduce una palabra");
-/*
+
 // Ejercicio 1
 function conAs(str) {
     if (str.startsWith('As') || str.startsWith('as')) {
@@ -34,7 +34,7 @@ function cambiar(str) {
 }
 
 alert(`El string intercambiado es: ${cambiar(str)}`);
-*/
+
 // Ejercicio 4
 function separarVocalesDeConsonantes(str) {
     let vocales = '';
