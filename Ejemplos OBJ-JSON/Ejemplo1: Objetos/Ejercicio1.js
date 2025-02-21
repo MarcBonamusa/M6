@@ -8,12 +8,11 @@ var tvSamsung = {
     getImporte: function() {
     return this.unidades * this.precio
     }
-
 };
+
 console.log(tvSamsung.getImporte())
 
 //Ejercicio 2
-/*
 for(let i = 1; i<=3; i++) {
     tvSamsung["Resolucion" + i] = prompt("Resolucion" + i, "full HD")
 }
@@ -32,7 +31,7 @@ if ("colores" in tvSamsung === false) {
 }
 
 document.getElementById("precio").textContent = tvSamsung.getImporte();
-*/
+
 //Ejercicio 3
 let tvSamsung2 = `[
     { "marca":"LG", "categoria":"Televisores" },
