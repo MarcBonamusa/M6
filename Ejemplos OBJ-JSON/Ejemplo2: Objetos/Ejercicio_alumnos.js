@@ -139,4 +139,42 @@ const alumnosJSON = `[
     "notam6": 7.5,
     "notam9": 8.5
     }
-    ]`;
+]`;
+
+/**
+ * 1. Convertir JSON a Objeto
+ * 2. Obtener cabeceras tabla
+ * 3. Pintar las cabeceras en la tabla
+ * 4. Recorrer todo el array
+*/    
+function init() {
+    //1
+    const arrayAlumnos = JSON.parse(alumnosJSON)
+    //2
+
+    const cabeceras = Object.keys(arrayAlumnos[0])
+
+    //3
+    let filaTitulos = "<tr>"
+    for (let k of cabeceras) {
+        filaTitulos += `<td>${k}</td>`
+    }
+    filaTitulos += "</tr>"
+    document.getElementById("tablaAlumnos").innerHTML = filaTitulos
+
+    //4
+    datosAlumno(arrayAlumnos, cabeceras)
+}
+
+function datosAlumno(arrayAlumnos, cabeceras) {
+    let datos = ""
+    arrayAlumnos.forEach(alumno => {
+        datos += "<tr>"
+        cabeceras.forEach(cabecera => {
+            datos += `<td>${alumno[cabecera]}</td>`
+
+        })
+        datos += '</tr>'
+    });
+    document.getElementById("tablaAlumnos").innerHTML += datos
+}
