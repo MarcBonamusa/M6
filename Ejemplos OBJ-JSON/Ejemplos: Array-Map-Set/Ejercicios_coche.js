@@ -22,13 +22,44 @@ let coches = [
 
 
 // 1. Devuelve los vehículos de la marca que no sean ni 'Alfa Romeo' ni 'Kia' que tengan más de 20 años.
-let cochesFiltrados = coches.filter(coche => coche[0] !== "Alfa Romeo" && coche[0] !== "Kia" && coche[2] < 2005)
-let cochesFiltrados2 = coches.map(coche => coche[0] !== "Alfa Romeo" && coche[0] !== "Kia" && coche[2] < 2005)
+console.log("Ejercicio 1")
 
-console.log(cochesFiltrados)
+let cochesFiltrados = coches.filter(coche => coche[0].toLowerCase() !== "alfa romeo" && coche[0].toLowerCase() !== "kia" && 20 < (new Date().getFullYear() - coche[2]));
+console.log(cochesFiltrados);
+
+/*
+function filtrarVehicles() {
+    coches.filter(function(coche) {
+        let marca = coche[0]
+        let anyo = coche[2]
+
+        if (marca !== "Alfa Romeo" && marca !== "Kia" && 20 < (new Date().getFullYear() - coche[2])) {
+            console.log(coche)
+            return coche
+        }
+    })
+}
+console.log(filtrarVehicles());
+// ANONIMA
+const filtrarVehicles2 = function () {
+    coches.filter(function(coche) {
+        let marca = coche[0]
+        let anyo = coche[2]
+
+        if (marca !== "Alfa Romeo" && marca !== "Kia" && 20 < (new Date().getFullYear() - coche[2])) {
+            console.log(coche)
+            return coche
+        }
+    })
+}
+console.log(filtrarVehicles2());
+*/
+
 // 2. Ordena el array ordenado por precio descendentemente.
+console.log("Ejercicio 2")
 let ordenado = coches.sort((a, b) => b[3] - a[3]);
 console.log(ordenado);
 // 3. Devuelve el array con un 20% de rebaja al precio.
+console.log("Ejercicio 3")
 let rebaja = coches.map(coche => coche[3] * 0.2);
 console.log(rebaja);
