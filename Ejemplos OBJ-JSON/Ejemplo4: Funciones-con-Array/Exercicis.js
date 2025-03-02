@@ -92,6 +92,9 @@ function filtrarUltimaLetra(miArray10){
     return miArray10.reverse().find(palabra => palabra.startsWith('p'))
 }
 
+console.log("EXERCICI 10");
+console.log(filtrarUltimaLetra(miArray10));
+
 // EXERCICI 11
 const miArray11 = ['hola', 'que', 'tal', 'estas', 'tu', 'bien', 'gracias', 'tambien'];
 
@@ -99,12 +102,18 @@ function filtrarPosicion(miArray11){
     return miArray11.findIndex(palabra => palabra.startsWith('t'))
 }
 
+console.log("EXERCICI 11");
+console.log(filtrarPosicion(miArray11));
+
 // EXERCICI 12
 const miArray12 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function ultimoPar(miArray12){
     return miArray12.reverse().find(numPar => numPar % 2 == 0)
 }
+
+console.log("EXERCICI 12");
+console.log(ultimoPar(miArray12));
 
 // Acumula
 // EXERCICI 13
@@ -116,6 +125,9 @@ function sumaArray(miArray13){
     return sumaFinal
 }
 
+console.log("EXERCICI 13");
+console.log(sumaArray(miArray13));
+
 // EXERCICI 14
 const miArray14 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -123,9 +135,15 @@ function restaArray(miArray14){
     return miArray14.reduce((acumulador, num) => acumulador - num);
 }
 
+console.log("EXERCICI 14");
+console.log(restaArray(miArray14));
+
 // EXERCICI 15
 const miArray15 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function restaElemento(miArray15){
     return miArray15.reverse().reduce((acumulador, num) => acumulador - num);
 }
+
+console.log("EXERCICI 15");
+console.log(restaElemento(miArray15));
