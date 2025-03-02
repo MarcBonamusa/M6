@@ -92,7 +92,6 @@ function filtrarUltimaLetra(miArray10){
     return miArray10.reverse().find(palabra => palabra.startsWith('p'))
 }
 
-
 // EXERCICI 11
 const miArray11 = ['hola', 'que', 'tal', 'estas', 'tu', 'bien', 'gracias', 'tambien'];
 
