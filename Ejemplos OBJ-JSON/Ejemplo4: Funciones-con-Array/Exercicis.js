@@ -78,65 +78,65 @@ console.log(stringLengths(miArray5));
 // EXERCICI 6
 const miArray6 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-function ArrayMultiplicado(miArray6){
+function multiplcarArray(miArray6){
     let numUsuari = prompt('Introduce un numero')
     return miArray6.map( num => num * numUsuari)
 }
 
 console.log("EXERCICI 6");
-console.log(ArrayMultiplicado(miArray6));
+console.log(multiplcarArray(miArray6));
 
 // Filtro
 // EXERCICI 7
-const miArray7 = ['hola', 'que', 'tal', 'estas', 'tu', 'bien', 'gracias', 'zorro'];
+const miArray7 = ['hola', 'que', 'tal', 'estas', 'tu', 'bien', 'gracias', 'zorro', 'zapato', 'zumo'];
 
-function filtrarPrimeraLetra(miArray7){
+function arrayConZ(miArray7){
     return miArray7.filter(palabra => palabra.startsWith('z'))
 }
 
 console.log("EXERCICI 7");
-console.log(filtrarPrimeraLetra(miArray7));
+console.log(arrayConZ(miArray7));
 
 // EXERCICI 8
 const miArray8 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-function filtrarMultiples(miArray8){
+function multiples5(miArray8){
     return miArray8.filter(multiple => multiple = multiple % 5 == 0 )
 }
 
 console.log("EXERCICI 8");
-console.log(filtrarMultiples(miArray8));
+console.log(multiples5(miArray8));
 
 // Busca
 // EXERCICI 9
 const miArray9 = ['hola', 'que', 'tal', 'estas', 'tu', 'bien', 'gracias'];
 
-function filtrarLong(miArray9){
+function longitud5(miArray9){
     return miArray9.find(long => long.length >= 5)
 }
 
 console.log("EXERCICI 9");
-console.log(filtrarLong(miArray9));
+console.log(longitud5(miArray9));
 
 // EXERCICI 10
 const miArray10 = ['hola', 'que', 'tal', 'estas', 'tu', 'bien', 'gracias', 'pues'];
 
-function filtrarUltimaLetra(miArray10){
+function primeraLetraP(miArray10){
     return miArray10.reverse().find(palabra => palabra.startsWith('p'))
 }
 
 console.log("EXERCICI 10");
-console.log(filtrarUltimaLetra(miArray10));
+console.log(primeraLetraP(miArray10));
 
 // EXERCICI 11
 const miArray11 = ['hola', 'que', 'tal', 'estas', 'tu', 'bien', 'gracias', 'tambien'];
 
-function filtrarPosicion(miArray11){
+function primeraLetraT(miArray11){
     return miArray11.findIndex(palabra => palabra.startsWith('t'))
 }
 
 console.log("EXERCICI 11");
-console.log(filtrarPosicion(miArray11));
+console.log(primeraLetraT(miArray11));
 
 // EXERCICI 12
 const miArray12 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
