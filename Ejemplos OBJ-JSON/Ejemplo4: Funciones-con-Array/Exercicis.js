@@ -76,14 +76,47 @@ console.log("EXERCICI 5");
 console.log(stringLengths(miArray5));
 
 // EXERCICI 6
+const miArray6 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function ArrayMultiplicado(miArray6){
+    let numUsuari = prompt('Introduce un numero')
+    return miArray6.map( num => num * numUsuari)
+}
+
+console.log("EXERCICI 6");
+console.log(ArrayMultiplicado(miArray6));
 
 // Filtro
 // EXERCICI 7
+const miArray7 = ['hola', 'que', 'tal', 'estas', 'tu', 'bien', 'gracias', 'zorro'];
+
+function filtrarPrimeraLetra(miArray7){
+    return miArray7.filter(palabra => palabra.startsWith('z'))
+}
+
+console.log("EXERCICI 7");
+console.log(filtrarPrimeraLetra(miArray7));
 
 // EXERCICI 8
+const miArray8 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function filtrarMultiples(miArray8){
+    return miArray8.filter(multiple => multiple = multiple % 5 == 0 )
+}
+
+console.log("EXERCICI 8");
+console.log(filtrarMultiples(miArray8));
 
 // Busca
 // EXERCICI 9
+const miArray9 = ['hola', 'que', 'tal', 'estas', 'tu', 'bien', 'gracias'];
+
+function filtrarLong(miArray9){
+    return miArray9.find(long => long.length >= 5)
+}
+
+console.log("EXERCICI 9");
+console.log(filtrarLong(miArray9));
 
 // EXERCICI 10
 const miArray10 = ['hola', 'que', 'tal', 'estas', 'tu', 'bien', 'gracias', 'pues'];
