@@ -15,7 +15,7 @@ let moure = document.getElementById('botonMoure');
 moure.addEventListener('click', () => {
     
     if (finestra) {
-        finestra = window.moveBy('-50px', '-50px')
+        finestra = window.moveBy(-50, -50)
         finestra.focus();
     }
 })
