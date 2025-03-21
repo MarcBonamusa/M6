@@ -1,28 +1,37 @@
-let finestra;
+let novaFinestra;
 
-//Abre una nueva ventana de dimensiones 500x200px en la posición (100,200)
-let abrir = document.getElementById('botonObrir');
-abrir.addEventListener('click', () => {
-    finestra = window.open('','Finestra Marc', 'height = 200px, width = 500px, top = 200px, left = 500px');
-    //escribe en ella (con document.write) un título h1 que diga ‘Hola’
-    if (finestra) {
-        finestra.document.write('<h1>Hola</h1>');
+document.getElementById("openWindow").addEventListener("click", () => {
+    // Obre una nova finestra
+    novaFinestra = window.open(
+        "", 
+        "NovaFinestra", 
+        "width=500,height=200,top=200,left=100"
+    );
+
+    // Escrivim un títol a la finestra
+    if (novaFinestra) {
+        novaFinestra.document.write("<h1>Hola</h1>");
+    } else {
+        alert("No s'ha pogut obrir la finestra. Pot ser que estigui bloquejada pel navegador.");
     }
 });
 
-//muévela 300 px hacia abajo y 100 a la izquierda (quizás es necesario crear un botón para ver el efecto)
-let moure = document.getElementById('botonMoure');
-moure.addEventListener('click', () => {
-    
-    if (finestra) {
-        finestra = window.moveBy(-50, -50)
-        finestra.focus();
+document.getElementById("moveWindow").addEventListener("click", () => {
+    // Moure la finestra si existeix
+    if (novaFinestra) {
+        novaFinestra.moveBy(-50, 50); // Mou 300 px avall i 100 px a l'esquerra
+        novaFinestra.focus(); 
+    } else {
+        alert("Primer has d'obrir la finestra!");
     }
-})
-
-//ciérrala
-let cerrar = document.getElementById('botonTancar');
-cerrar.addEventListener('click', () => {
-    window.close();
 });
 
+document.getElementById("closeWindow").addEventListener("click", () => {
+    // Tancar la finestra si existeix
+    if (novaFinestra) {
+        novaFinestra.close();
+        novaFinestra = null;
+    } else {
+        alert("La finestra ja està tancada o no existeix.");
+    }
+});
