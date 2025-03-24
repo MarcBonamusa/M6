@@ -1,8 +1,6 @@
-div {
-    width: 50px;
-    height: 50px;
-    padding: 20px;
-    margin: 50px auto;
-    margin-top: 780px;
-    background: rgb(255, 0, 0);
-}  
+img {
+    margin-top: 43%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}   
