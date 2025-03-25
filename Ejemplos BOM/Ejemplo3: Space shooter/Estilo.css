@@ -3,4 +3,11 @@ img {
     width: 100px;
     height: 100px;
     position: absolute;
-}   
+}
+
+.bala {
+    position: absolute;
+    width: 4px;
+    height: 10px;
+    background-color: red;
+}
