@@ -6,7 +6,6 @@ function aplicarPreferencias() {
     if (colorFuente) document.body.style.color = colorFuente;
 }
 
-// Función para abrir la ventana de configuración
 function abrirVentanaConfig() {
     let ventanaConfig = window.open("", "ConfigWindow", "width=400,height=300,top=300,left=300");
 
@@ -28,9 +27,9 @@ function abrirVentanaConfig() {
             inputFuente.value = getCookie("colorFuente") || "#000000";
 
             ventanaConfig.document.getElementById("guardar").addEventListener("click", function () {
-                setCookie("colorFondo", inputFondo.value, 365);
-                setCookie("colorFuente", inputFuente.value, 365);
-                setCookie("configurada", "true", 365);
+                setCookie("colorFondo", inputFondo.value);
+                setCookie("colorFuente", inputFuente.value);
+                setCookie("configurada", "true");
 
                 ventanaConfig.close();
                 location.reload();
