@@ -1,47 +1,37 @@
-function aplicarPreferencias() {
-    let colorFondo = getCookie("colorFondo");
-    let colorFuente = getCookie("colorFuente");
-
-    if (colorFondo) document.body.style.backgroundColor = colorFondo;
-    if (colorFuente) document.body.style.color = colorFuente;
+function configuracionGuardada() {
+    return document.cookie.includes("configurada=true");
 }
 
-function abrirVentanaConfig() {
-    let ventanaConfig = window.open("", "ConfigWindow", "width=400,height=300,top=300,left=300");
+function obtenerCookie(nombre) {
+    let cookies = document.cookie.split('; ');
+    for (let i = 0; i < cookies.length; i++) {
+        let [key, value] = cookies[i].split('=');
+        if (key === nombre) return value;
+    }
+    return null;
+}
 
-    if (ventanaConfig) {
-        ventanaConfig.document.write(`
-            <h1>Configuración de preferencias</h1>
-            <label for="fondo">Color de fondo: </label>
-            <input type="color" id="fondo"><br><br>
-            <label for="fuente">Color de fuente: </label>
-            <input type="color" id="fuente"><br><br>
-            <button id="guardar">Guardar</button>
-        `);
-
-        ventanaConfig.onload = function () {
-            let inputFondo = ventanaConfig.document.getElementById("fondo");
-            let inputFuente = ventanaConfig.document.getElementById("fuente");
-
-            inputFondo.value = getCookie("colorFondo") || "#ffffff";
-            inputFuente.value = getCookie("colorFuente") || "#000000";
-
-            ventanaConfig.document.getElementById("guardar").addEventListener("click", function () {
-                setCookie("colorFondo", inputFondo.value);
-                setCookie("colorFuente", inputFuente.value);
-                setCookie("configurada", "true");
-
-                ventanaConfig.close();
-                location.reload();
-            });
-        };
-    } else {
-        alert("No se pudo abrir la ventana de configuración. Puede estar bloqueada por el navegador.");
+function abrirVentana() {
+    if (!configuracionGuardada()) {
+        const features = "left=200,top=200,width=400,height=350";
+        window.open('Ventana.html', 'ventana', features);
     }
 }
 
-if (!getCookie("configurada")) {
-    abrirVentanaConfig();
+function aplicarEstilos() {
+    let fondo = obtenerCookie('fondo');
+    let fuente = obtenerCookie('fuente');
+
+    if (fondo) document.body.style.backgroundColor = fondo;
+    if (fuente) {
+        let titulo = document.getElementById('titulo');
+        let parrafo = document.getElementById('parrafo');
+        if (titulo) titulo.style.color = fuente;
+        if (parrafo) parrafo.style.color = fuente;
+    }
 }
 
-aplicarPreferencias();
+document.addEventListener("DOMContentLoaded", () => {
+    abrirVentana();
+    aplicarEstilos();
+});

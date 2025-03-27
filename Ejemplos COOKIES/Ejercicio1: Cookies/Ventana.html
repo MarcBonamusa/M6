@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ventana</title>
+    <title>Configuración de preferencias</title>
+    <script src="ScriptCookies.js" defer></script>
+    
 </head>
 <body>
-    <h1>Configuración de preferencias</h1>
-    <form>
+    <h2>Configuración de preferencias</h2>
+    <form id="formulario">
         <label for="fondo">Color de fondo: </label>
         <input id="fondo" type="color"><br><br>
         <label for="fuente">Color de fuente: </label>
         <input id="fuente" type="color"><br><br>
-        <button onclick="guardarDatos()" id="boton">Guardar</button>
+        <button type="button" id="guardar">Guardar</button>
     </form>
 </body>
 </html>
